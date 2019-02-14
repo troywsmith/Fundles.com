@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "prop-types": "^15.7.2",
+    "prop-types-extra": "^1.1.0",
     "react": "^16.8.1",
+    "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.1",
     "react-scripts": "2.1.5"
   },
@@ -17,6 +21,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "react": "^15.3.1",
   "browserslist": [
     ">0.2%",
     "not dead",

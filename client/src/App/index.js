@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-// import Products from '../components/Products';
+import NavTop from '../components/NavTop';
+import Products from '../components/Products';
+import Categories from '../components/Categories';
 
 class Main extends Component {
   constructor(props) {
@@ -12,55 +14,51 @@ class Main extends Component {
   };
 
   componentDidMount() {
-    this.callApi()
-      .catch(err => console.log(err))
+    this.callApi().catch(err => console.log(err));
   }
 
   callApi = async () => {
     const response = await fetch('/products');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
-    this.setState({
-      products: body.products,
-      isLoading: false
-    });
+    this.setState({ products: body.products });
+    this.getCategories()
+    this.setState({ isLoading: false })
     return body;
   };
 
+  getCategories() {
+    let products = this.state.products
+    let categories = new Set()
+    for (let i = 0; i < products.length; i++) {
+      categories.add(products[i].prod_class_desc)
+    }
+    this.setState({ categories: categories })
+  }
 
 
   render() {
 
     return (
-      <div >
+      <div className="app">
 
-        <h2>Snackly</h2>
+        <div className="navtop">
+          <NavTop />
+        </div>
 
-        {this.state.isLoading ? null :
+        <div className='main'>
 
-          <div >
-
-            <div>
-              <h3>Available Products</h3>
-              <hr />
-              <ul>
-                {this.state.products ?
-                  this.state.products.map(product => {
-                    return (
-                      <li key={product.a_prod_no}>
-                        {product.a_prod_no}: {product.desc_1}
-                      </li>
-                    )
-                  }) : null
-                }
-
-              </ul>
-              <hr />
-            </div>
-
+          <div className='sidebar'>
           </div>
 
-        }
+          <div className='right'>
+            {this.state.isLoading ? null :
+              <Categories categories={this.state.categories} />
+              // <Products products={this.state.products} />
+            }
+          </div>
+
+        </div>
 
       </div>
     );
