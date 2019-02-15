@@ -7,16 +7,15 @@ class Products extends Component {
         return (
             <div>
                 <h3>Products</h3>
-                <ul>
-                    <p> TEST </p>
-                    {/* {this.props.products ?
-                        this.props.products.map(product => {
+                <div className="products">
+                    {this.props.products ?
+                        this.props.products.slice(0, 50).map(product => {
                             return (
                                 <Product product={product} key={product.a_prod_no} />
                             )
                         }) : null
-                    } */}
-                </ul>
+                    }
+                </div>
             </div>
         );
     };
