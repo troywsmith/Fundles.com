@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Home from './Home';
+import Sidebar from '../components/Sidebar';
+import Categories from '../components/Categories';
+import Products from '../components/Products';
 
-class Main extends Component {
+class Home extends Component {
 
     constructor(props) {
         super(props);
@@ -38,15 +39,24 @@ class Main extends Component {
 
     render() {
         return (
-            <main>
-                <Switch>
-                    <Route exact path='/' component={Home} />
-                    {/* <Route path='/roster' component={Roster} />
-                    <Route path='/schedule' component={Schedule} /> */}
-                </Switch>
-            </main>
+            <div className='main'>
+
+                <div className='sidebar'>
+                    <Sidebar />
+                </div>
+
+                <div className='right'>
+                    {this.state.isLoading ? null :
+                        <div>
+                            <Categories categories={this.state.categories} />
+                            <Products products={this.state.products} />
+                        </div>
+                    }
+                </div>
+
+            </div>
         )
     };
 }
 
-export default Main;
+export default Home;

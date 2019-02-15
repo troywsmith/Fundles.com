@@ -9,7 +9,7 @@ class Products extends Component {
                 <h3>Products</h3>
                 <div className="products">
                     {this.props.products ?
-                        this.props.products.slice(0, 50).map(product => {
+                        this.props.products.slice(0, 10).map(product => {
                             return (
                                 <Product product={product} key={product.a_prod_no} />
                             )

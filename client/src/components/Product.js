@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Product extends Component {
 
   render() {
-    const product = this.props.product
-    const image_path = "../../../images/" + this.props.product.image_xref
+    const product = this.props.product;
+    const image_path = "/images/" + this.props.product.image_xref.toLowerCase();
     return (
       <div key={product.a_prod_no} className="product">
         {/* <img src="https://m.media-amazon.com/images/I/61nFaHKU-HL._SY125_.jpg" alt="sample"></img> */}
