@@ -23,7 +23,7 @@ class App extends Component {
     if (response.status !== 200) throw Error(body.message);
 
     // Sort products to display by vendor
-    let products = body.products
+    let temp = body.products
     function compare(a, b) {
       if (a.vend_name < b.vend_name)
         return -1;
@@ -31,7 +31,16 @@ class App extends Component {
         return 1;
       return 0;
     }
-    products.sort(compare);
+    temp.sort(compare);
+
+    // Filter out out of stock products
+    let products = []
+    for (let i = 0; i < temp.length; i++) {
+      if (temp[i].oh_qty > 0.0) {
+        console.log(temp[i]);
+        products.push(temp[i])
+      }
+    }
 
     this.setState({ products: products });
     this.getCategories()

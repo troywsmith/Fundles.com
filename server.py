@@ -11,7 +11,7 @@ api = Api(app)
 class Products(Resource):
     def get(self):
         conn = db_connect.connect() # connect to database
-        query = conn.execute("select * from products") # This line performs query and returns json result
+        query = conn.execute("SELECT * FROM products WHERE online='YES' ") # This line performs query and returns json result
         result = {'products': [dict(zip(tuple (query.keys()) ,i)) for i in query.cursor]}
         return jsonify(result)
         
