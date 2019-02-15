@@ -6,10 +6,9 @@ class Products extends Component {
     render() {
         return (
             <div>
-                <h3>Products</h3>
                 <div className="products">
                     {this.props.products ?
-                        this.props.products.slice(0, 10).map(product => {
+                        this.props.products.slice(0, 100).map(product => {
                             return (
                                 <Product product={product} key={product.a_prod_no} />
                             )

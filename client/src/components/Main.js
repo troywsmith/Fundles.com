@@ -1,50 +1,57 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+
+// Will always show
+import Sidebar from './Sidebar';
+import Categories from '../components/Categories';
+
+// Will show based on user nav
 import Home from './Home';
+// import Query from './Query';
+import Snacks from './Snacks';
+import Drinks from './Drinks';
+import Healthy from './Healthy';
+import Grocery from './Grocery';
+import HomeGoods from './HomeGoods';
 
 class Main extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            products: [],
-            isLoading: true,
-            test: 'test state'
-        }
-    };
-
-    componentDidMount() {
-        this.callApi().catch(err => console.log(err));
-    }
-
-    callApi = async () => {
-        const response = await fetch('/products');
-        const body = await response.json();
-        if (response.status !== 200) throw Error(body.message);
-        this.setState({ products: body.products });
-        this.getCategories()
-        this.setState({ isLoading: false })
-        return body;
-    };
-
-    getCategories() {
-        let products = this.state.products
-        let categories = new Set()
-        for (let i = 0; i < products.length; i++) {
-            categories.add(products[i].prod_class_desc)
-        }
-        this.setState({ categories: [...categories] })
-    }
-
     render() {
         return (
-            <main>
-                <Switch>
-                    <Route exact path='/' component={Home} />
-                    {/* <Route path='/roster' component={Roster} />
-                    <Route path='/schedule' component={Schedule} /> */}
-                </Switch>
-            </main>
+            <div className="main">
+                <div className='sidebar'>
+                    <Sidebar />
+                </div>
+                <div className='right'>
+                    <Categories />
+                    <Switch>
+                        <Route
+                            exact path='/'
+                            component={() => <Home products={this.props.products} />}
+                        />
+                        <Route
+                            path='/snacks'
+                            component={() => <Snacks products={this.props.products} />}
+                        />
+                        <Route
+                            path='/drinks'
+                            component={() => <Drinks products={this.props.products} />}
+                        />
+                        <Route
+                            path='/grocery'
+                            component={() => <Grocery products={this.props.products} />}
+                        />
+                        <Route
+                            path='/healthy'
+                            component={() => <Healthy products={this.props.products} />}
+                        />
+                        <Route
+                            path='/homegoods'
+                            component={() => <HomeGoods products={this.props.products} />}
+                        />
+                    </Switch>
+                </div>
+            </div>
         )
     };
 }

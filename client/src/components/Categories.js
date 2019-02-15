@@ -17,10 +17,10 @@ class Categories extends Component {
                         <Link to='/healthy' className="category-link">Healthy </Link>
                     </button>
                     <button className="button-category">
-                        <Link to='/groceries' className="category-link">Groceries </Link>
+                        <Link to='/grocery' className="category-link">Groceries </Link>
                     </button>
                     <button className="button-category">
-                        <Link to='/home_goods' className="category-link">Home Goods </Link>
+                        <Link to='/homegoods' className="category-link">Home Goods </Link>
                     </button>
                     {/* {
                         this.props.categories ?
