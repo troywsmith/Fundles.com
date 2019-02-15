@@ -127,6 +127,19 @@ body {
   }
 
 .product-picture {
-    height: 100px;
-    width: 100px;
+    width: 160px; 
+    height: 125px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fallback-pic {
+    background-image: url(http://cdn.onlinewebfonts.com/svg/img_521934.png);
+    display: inline-block; 
+    width: 160px; 
+    height: 125px;
+    background-position: center center; 
+    background-size: cover;
+    background-repeat: no-repeat;
 }

@@ -20,7 +20,6 @@ class Header extends Component {
         const body = await response.json();
         if (response.status !== 200) throw Error(body.message);
         this.setState({ products: body.products });
-        // this.getCategories()
         this.setState({ isLoading: false })
         return body;
     };

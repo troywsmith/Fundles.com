@@ -23,7 +23,7 @@ class Main extends Component {
                     <Sidebar />
                 </div>
                 <div className='right'>
-                    <Categories />
+                    <Categories categories={this.props.categories}/>
                     <Switch>
                         <Route
                             exact path='/'
@@ -46,7 +46,7 @@ class Main extends Component {
                             component={() => <Healthy products={this.props.products} />}
                         />
                         <Route
-                            path='/homegoods'
+                            path='/home_goods'
                             component={() => <HomeGoods products={this.props.products} />}
                         />
                     </Switch>

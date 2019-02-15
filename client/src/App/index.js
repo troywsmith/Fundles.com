@@ -21,19 +21,32 @@ class App extends Component {
     const response = await fetch('/products');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
-    this.setState({ products: body.products });
+
+    // Sort products to display by vendor
+    let products = body.products
+    function compare(a, b) {
+      if (a.vend_name < b.vend_name)
+        return -1;
+      if (a.vend_name > b.vend_name)
+        return 1;
+      return 0;
+    }
+    products.sort(compare);
+
+    this.setState({ products: products });
     this.getCategories()
     this.setState({ isLoading: false })
     return body;
   };
 
   getCategories() {
-    let products = this.state.products
-    let categories = new Set()
-    for (let i = 0; i < products.length; i++) {
-      categories.add(products[i].prod_class_desc)
-    }
-    this.setState({ categories: [...categories] })
+    // let products = this.state.products
+    // let categories = new Set()
+    // for (let i = 0; i < products.length; i++) {
+    //   categories.add(products[i].prod_class_desc)
+    // }
+    // this.setState({ categories: [...categories] })
+    this.setState({ categories: ['Snacks', 'Drinks', 'Healthy', 'Grocery', 'Home_Goods'] })
   }
 
   render() {
@@ -42,7 +55,7 @@ class App extends Component {
       <div className="app">
         <Header products={this.state.products} />
         {this.state.isLoading ? null :
-          <Main products={this.state.products} />
+          <Main products={this.state.products} categories={this.state.categories} />
         }
       </div>
     );
