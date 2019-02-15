@@ -8,9 +8,9 @@ class App extends Component {
     super(props);
     this.state = {
       products: [],
-      isLoading: true,
-      test: 'test state'
-    }
+      isLoading: true
+    };
+    this.onQueryChange = this.onQueryChange.bind(this);
   };
 
   componentDidMount() {
@@ -37,7 +37,6 @@ class App extends Component {
     let products = []
     for (let i = 0; i < temp.length; i++) {
       if (temp[i].oh_qty > 0.0) {
-        console.log(temp[i]);
         products.push(temp[i])
       }
     }
@@ -58,11 +57,24 @@ class App extends Component {
     this.setState({ categories: ['Snacks', 'Drinks', 'Healthy', 'Grocery', 'Home_Goods'] })
   }
 
+  onQueryChange(evt) {
+    const query = evt.target.value;
+    console.log(query)
+    let products = this.state.products;
+    let results = []
+    for (let i = 0; i < products.length; i++) {
+      if (products[i].desc_1.toLowerCase().includes(query.toLowerCase())) {
+        results.push(products[i]);
+      }
+    }
+    this.setState({ products: results });
+  }
+
   render() {
 
     return (
       <div className="app">
-        <Header products={this.state.products} />
+        <Header products={this.state.products} onQueryChange={this.onQueryChange.bind(this)} />
         {this.state.isLoading ? null :
           <Main products={this.state.products} categories={this.state.categories} />
         }

@@ -6,7 +6,7 @@ class Products extends Component {
     render() {
         return (
             <div>
-                <div className="products">
+                <ul className="products">
                     {this.props.products ?
                         this.props.products.slice(0, 100).map(product => {
                             return (
@@ -14,7 +14,7 @@ class Products extends Component {
                             )
                         }) : null
                     }
-                </div>
+                </ul>
             </div>
         );
     };

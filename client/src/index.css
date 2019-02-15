@@ -14,6 +14,10 @@ body {
   font-family: 'Avenir LT Std', sans-serif;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .nav-top {
   display: flex;
   height: 75px;
@@ -117,17 +121,27 @@ body {
 }
 
 .product {
-    width: 20%;
+    width: 160px;
+    height: 266px;  
+    margin-top: 4px!important;
+    margin-bottom: 40px; 
+    margin-left: 5px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    font-size: 13px;
+    line-height: 19px; 
     text-align: center;
-    margin-bottom: 40px;
+    color: blue;
 }
 
 .product-name {
-    text-transform: capitalize;   
+    text-transform: capitalize;
+    text-align: left;
+    height: 50px;   
   }
 
 .product-picture {
-    width: 160px; 
+    width: 100%; 
     height: 125px;
     background-position: center center;
     background-size: cover;
@@ -135,11 +149,15 @@ body {
 }
 
 .fallback-pic {
+    width: 100%; 
+    height: 125px;
     background-image: url(http://cdn.onlinewebfonts.com/svg/img_521934.png);
     display: inline-block; 
-    width: 160px; 
-    height: 125px;
     background-position: center center; 
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.add-to-cart-button {
+    width: 100%;
 }

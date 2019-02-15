@@ -3,35 +3,6 @@ import { Link } from 'react-router-dom'
 
 class Header extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            products: [],
-            isLoading: true
-        }
-    };
-
-    componentDidMount() {
-        this.callApi().catch(err => console.log(err));
-    }
-
-    callApi = async () => {
-        const response = await fetch('/products');
-        const body = await response.json();
-        if (response.status !== 200) throw Error(body.message);
-        this.setState({ products: body.products });
-        this.setState({ isLoading: false })
-        return body;
-    };
-
-    filterList = function (event) {
-        let updatedList = this.state.products;
-        updatedList = updatedList.filter(function (item) {
-            return item.toLowerCase().search(event.target.value.toLowerCase()) !== -1;
-        });
-        this.setState({ items: updatedList });
-    }
-
     render() {
         return (
             <div className="nav-top">
@@ -43,8 +14,7 @@ class Header extends Component {
                         <input
                             placeholder="Search for products..."
                             className="product-search"
-                            // ref={input => this.search = input}
-                            onChange={this.filterList}
+                            onChange={this.props.onQueryChange}
                         />
                         <button className="search-button"><span>🔍</span></button>
                         <p></p>
@@ -59,4 +29,3 @@ class Header extends Component {
 }
 
 export default Header;
-
