@@ -7,7 +7,6 @@ import Categories from '../components/Categories';
 
 // Will show based on user nav
 import Home from './Home';
-// import Query from './Query';
 import Snacks from './Snacks';
 import Drinks from './Drinks';
 import Healthy from './Healthy';
@@ -23,7 +22,7 @@ class Main extends Component {
                     <Sidebar />
                 </div>
                 <div className='right'>
-                    <Categories categories={this.props.categories}/>
+                    <Categories categories={this.props.categories} />
                     <Switch>
                         <Route
                             exact path='/'
@@ -48,7 +47,7 @@ class Main extends Component {
                         <Route
                             path='/home_goods'
                             component={() => <HomeGoods products={this.props.products} />}
-                        />
+                        /> */}
                     </Switch>
                 </div>
             </div>

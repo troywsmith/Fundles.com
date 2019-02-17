@@ -10,7 +10,7 @@ class Header extends Component {
                     <Link to='/'>snackers </Link>
                 </div>
                 <div className="nav-top-mid">
-                    <form>
+                    {/* <form>
                         <input
                             placeholder="Search for products..."
                             className="product-search"
@@ -18,7 +18,7 @@ class Header extends Component {
                         />
                         <button className="search-button"><span>🔍</span></button>
                         <p></p>
-                    </form>
+                    </form> */}
                 </div>
                 <div className="nav-top-right">
                     <Link to='/account'>My Account </Link>

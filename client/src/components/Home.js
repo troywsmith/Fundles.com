@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
-import Products from '../components/Products';
+import React, { Component } from 'react'
+import Products from './Products'
 
-class Home extends Component {
-
+export default class Home extends Component {
     render() {
         return (
             <div>
-                <div>
-                    <h3>All Products</h3>
-                    <Products products={this.props.products} />
-                </div>
+                <h4>Products</h4>
+                <Products products={this.props.products} />
             </div>
         )
-    };
+    }
 }
-
-export default Home;

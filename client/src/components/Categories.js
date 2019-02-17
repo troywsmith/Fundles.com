@@ -7,6 +7,7 @@ class Categories extends Component {
 
         return (
             <div>
+                <h4>Categories</h4>
                 <div className="categories">
                     {
                         this.props.categories ?
