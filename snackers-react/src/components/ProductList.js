@@ -13,12 +13,13 @@ class ProductList extends Component {
   }
 
   async componentDidMount() {
-    let response = await fetch("https://snipcart-strapi.herokuapp.com/product");
+    let response = await fetch(`/${this.props.product_list.toLowerCase()}_products`);
     if (!response.ok) {
       return
     }
 
-    let products = await response.json()
+    let data = await response.json()
+    let products = data.products
     this.setState({ loading: false, products: products })
   }
 
@@ -26,14 +27,17 @@ class ProductList extends Component {
     if (!this.state.loading) {
       return (
         <div className="ProductList">
-          <h2 className="ProductList-title">Available Products ({this.state.products.length})</h2>
+          <h2 className="ProductList-title">{this.props.product_list} Products ({this.state.products.length})</h2>
           <div className="ProductList-container">
             {this.state.products.map((product, index) => {
+                
+              const image_path = "/images/" + product.image_xref.toLowerCase();
+
               return (
-                <div className="ProductList-product" key={product.id}>
-                  <Link to={`/product/${product.id}`}>
-                    <h3>{product.name}</h3>
-                    <img src={`https://snipcart-strapi.herokuapp.com${product.image.url}`} alt={product.name} />
+                <div className="ProductList-product" key={product.a_prod_no}>
+                  <Link to={`/product/${product.a_prod_no}`}>
+                    <h3>{product.desc_1}</h3>
+                    <img src={image_path} alt={product.desc_1} />
                   </Link>
                   <BuyButton product={product} />
                 </div>

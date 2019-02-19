@@ -1,5 +1,5 @@
 .BuyButton {
-    background: red;
+    background: rgba($color: blue, $alpha: 0.4);
     white-space: nowrap;
     font-weight: 500;
     color: white;
@@ -9,7 +9,7 @@
     outline: none;
     border: none;
     cursor: pointer;
-    @include drop-shadow(darken(red, 20), 0.7);
+    @include drop-shadow(darken(blue, 20), 0.7);
 
     transition: transform 0.5s;
     &:hover {

@@ -5,11 +5,11 @@ class BuyButton extends Component {
 		super(props);
 
 		this.state = {
-			id: props.product.id,
-			name: props.product.name,
-			price: props.product.price,
+			id: props.product.a_prod_no,
+			name: props.product.desc_1,
+			price: props.product.curr_cost,
 			weight: props.product.weight,
-			description: props.product.description,
+			description: props.product.desc_1,
 			url: "https://snipcart-strapi.herokuapp.com/snipcartParser"
 		}
 	}
@@ -24,7 +24,7 @@ class BuyButton extends Component {
 				data-item-weight={this.state.weight}
 				data-item-url={this.state.url}
 				data-item-description={this.state.description}>
-				ADD TO CART ({this.state.price}$)
+				ADD TO CART (${this.state.price})
 			</button>
 		);
 	}
