@@ -20,6 +20,7 @@ class ProductList extends Component {
 
     let data = await response.json()
     let products = data.products
+    console.log(products)
     this.setState({ loading: false, products: products })
   }
 
@@ -30,7 +31,7 @@ class ProductList extends Component {
           <h2 className="ProductList-title">{this.props.product_list} Products ({this.state.products.length})</h2>
           <div className="ProductList-container">
             {this.state.products.map((product, index) => {
-                
+
               const image_path = "/images/" + product.image_xref.toLowerCase();
 
               return (

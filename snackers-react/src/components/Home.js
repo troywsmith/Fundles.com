@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
 // Components
+import CategoryList from './CategoryList'
 import ProductList from './ProductList'
 
 class Home extends Component {
@@ -15,6 +16,8 @@ class Home extends Component {
         <div className="welcome-message">
           <p>💥  No membership fees ever | Free shipping on orders over $50  💥</p>
         </div>
+
+        <CategoryList />
 
         <ProductList product_list={'Featured'}/>
 
