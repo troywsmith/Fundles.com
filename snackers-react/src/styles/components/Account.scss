@@ -1,0 +1,18 @@
+.account {
+    width: 100%;
+}
+  
+.account-section {
+    @include drop-shadow($dark-grey, 0.95);
+    background: white;
+    border-radius: 4px;
+    padding: 20px;
+
+    width: 60%;
+    margin: 50px auto;
+
+    .subsection {
+        text-align: left;
+    }
+
+}

@@ -20,7 +20,6 @@ class ProductList extends Component {
 
     let data = await response.json()
     let products = data.products
-    console.log(products)
     this.setState({ loading: false, products: products })
   }
 
