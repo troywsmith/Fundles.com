@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import ProductModal from './ProductModal'
 
 class Product extends Component {
 
   render() {
+
     const product = this.props.product;
     const image_path = "/images/" + this.props.product.image_xref.toLowerCase();
+
     return (
+
       <li key={product.a_prod_no} className="product">
 
         <div className="a-row a-spacing-small">
@@ -17,7 +21,7 @@ class Product extends Component {
         </div>
 
         <div>
-          <p className="product-name">{product.desc_1.toLowerCase()}</p>
+          <ProductModal product={this.props.product}/>
         </div>
 
         <div className="a-row a-grid-vertical-align a-grid-center">

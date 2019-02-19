@@ -7,6 +7,11 @@ Color Pallete
 #F0D87A 
 */
 
+
+
+
+
+/* General  */
 body {
   margin: 0px;
   padding: 0px;
@@ -18,11 +23,15 @@ ul {
     list-style-type: none;
 }
 
+
+
+
+
+/* Nav Bar 1 */
 .nav-top {
   display: flex;
   height: 75px;
   align-content: flex-start;
-  border-bottom: 1px solid black;
   background: #0066c0
 }
 
@@ -63,6 +72,54 @@ ul {
     color: white;
 }
 
+
+
+
+
+
+/* Nav Bar 2 */
+.nav-top-2 {
+    display: flex;
+    height: 75px;
+    align-content: flex-start;
+    border-bottom: 1px solid black;
+    background: white
+  }
+  
+.nav-top-2 > div {
+    margin: 20px;
+}
+
+.nav-top-2-left {
+    width: 20%;
+    font-size: 20px;
+}
+
+.nav-top-2-left * {
+    color: white;
+}
+
+.nav-top-2-mid {
+    width: 50%;
+    font-size: 20px;
+}
+
+.nav-top-2-right {
+    width: 20%;
+    font-size: 20px;
+    text-align: right;
+}
+
+.nav-top-2-right * {
+    color: black;
+}
+
+
+
+
+
+
+/* Main  */
 .main {
     width: 100%;
     display: flex;
