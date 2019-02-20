@@ -4,7 +4,6 @@ import { Link, Route, Switch } from 'react-router-dom'
 
 // Components
 import Category from './Category'
-import ProductList from './ProductList'
 
 class PageProducts extends Component {
     constructor(props) {
