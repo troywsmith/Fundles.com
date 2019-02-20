@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 // Components
 import SearchBar from '../components/Searchbar'
 
-class Header extends React.Component {
+class Header extends Component {
 
     render() {
         return (
@@ -20,10 +20,6 @@ class Header extends React.Component {
 
                 <div className="middle">
                     <SearchBar />
-                    {/* <input
-                        className="search-products"
-                        type="text"
-                        placeholder="Search for products..." /> */}
                 </div>
 
                 <div className="right">

@@ -32,7 +32,6 @@ class ProductList extends Component {
         let param_id = this.props.match.params.id
         let category = param_id.slice(0, 1).toUpperCase() + param_id.slice(1)
         let subcategories = categories[category]
-
         this.setState({ loading: false, category: category, subcategories: subcategories })
     }
 

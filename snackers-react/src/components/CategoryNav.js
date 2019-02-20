@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 
 // Components
 
-class Header extends React.Component {
+
+class Header extends Component {
     constructor(props) {
         super(props);
 
@@ -19,9 +20,7 @@ class Header extends React.Component {
         if (!response.ok) {
             return
         }
-
         let data = await response.json()
-
         let results = data.categories
         
         let categories = {}
@@ -35,7 +34,7 @@ class Header extends React.Component {
             let subcategory = results[i].subcategory
             categories[category].push(subcategory)
         }
-        console.log(categories)
+
         this.setState({ loading: false, categories: categories })
     }
     render() {
