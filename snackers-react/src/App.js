@@ -5,15 +5,24 @@ import { Route, Switch } from "react-router";
 // Styles
 import './styles/app.scss';
 
-// Components
+// Fixed Components
 import Header from './components/Header';
-import CategoryNav from './components/CategoryNav';
-import Home from './components/Home';
+import NavTop from './components/NavTop';
 import Footer from './components/Footer';
-import Account from './components/Account';
-import Category from './components/Category';
-import ProductList from './components/ProductList';
+
+// Pages
+import PageHome from './components/PageHome';
+import PageProducts from './components/PageProducts';
+import PageAccount from './components/PageAccount';
+
+// Components > components
+// import Category from './components/Category';
 import Product from './components/Product';
+// import ProductList from './components/ProductList';
+import Category from './components/Category';
+
+// Other
+
 
 class App extends Component {
 
@@ -27,31 +36,33 @@ class App extends Component {
     }
   }
 
-  async componentDidMount() {
-    let response = await fetch(`/all_products`);
-    if (!response.ok) {
-      return
-    }
+  // async componentDidMount() {
+  //   let response = await fetch(`/all_products`);
+  //   if (!response.ok) {
+  //     return
+  //   }
 
-    let data = await response.json()
-    let products = data.products
-    this.setState({ loading: false, products: products })
-  }
+  //   let data = await response.json()
+  //   let products = data.products
+  //   this.setState({ loading: false, products: products })
+  // }
 
   render() {
     return (
       <div className="App">
 
         <Header cartTotal={this.state.cartTotal} />
-        <CategoryNav />
+
+        <NavTop />
 
         <main className="App-content">
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/account" exact component={Account} />
-            <Route path="/products" component={ProductList} />
+            <Route path="/" exact component={PageHome} />
+            <Route path="/products" component={PageProducts} />
+            <Route path="/account" component={PageAccount} />
+
             <Route path="/product/:id" component={Product} />
-            <Route path="/category/:id" component={Category} />
+            {/* <Route path="/products/category/:id" component={Category} /> */}
           </Switch>
         </main>
 

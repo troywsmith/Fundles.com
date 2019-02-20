@@ -11,7 +11,7 @@ class Product extends Component {
   async componentDidMount() {
     let response = await fetch(`/all_products`)
     let data = await response.json()
-    
+
     let products = data.products
     let product = null
     let param_id = this.props.match.params.id
@@ -25,8 +25,9 @@ class Product extends Component {
     this.setState({
       loading: false,
       product: product,
-      image_path:"/images/" + product.image_xref.toLowerCase()
+      image_path: "/images/" + product.image_xref.toLowerCase()
     })
+
   }
 
   render() {
@@ -36,7 +37,7 @@ class Product extends Component {
         <div className="product">
           <div className="product__information">
             <h2 className="Product-title">{this.state.product.desc_1}</h2>
-            <img src={this.state.image_path} alt={this.state.product.desc_1}/>
+            <img src={this.state.image_path} alt={this.state.product.desc_1} />
             <BuyButton {...this.state} />
           </div>
           <div className="product__description">

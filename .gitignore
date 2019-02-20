@@ -1,6 +1,6 @@
 sarnow.db
 .vscode
-client
-snackers-react/node_modules
-snackers-react/public
+./client
+./snackers-react/node_modules
+./snackers-react/public
 .gitignore/images

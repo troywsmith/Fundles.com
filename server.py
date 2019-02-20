@@ -45,9 +45,21 @@ class Categories(Resource):
     def get(self):
         conn = db_connect.connect()  # connect to database
         # This line performs query and returns json result
-        query = conn.execute("SELECT DISTINCT category, subcategory FROM products_online WHERE online='YES' ")
+        query = conn.execute(
+            "SELECT DISTINCT category, subcategory FROM products_online WHERE online='YES' ")
         result = {'categories': [dict(zip(tuple(query.keys()), i))
-                               for i in query.cursor]}
+                                 for i in query.cursor]}
+        return jsonify(result)
+
+
+class Juice(Resource):
+    def get(self):
+        conn = db_connect.connect()  # connect to database
+        # This line performs query and returns json result
+        query = conn.execute(
+            "SELECT * FROM products_online WHERE online='YES' AND subcategory='Juice' ")
+        result = {'products': [dict(zip(tuple(query.keys()), i))
+                                 for i in query.cursor]}
         return jsonify(result)
 
 
@@ -55,6 +67,7 @@ api.add_resource(AllProducts, '/all_products')  # Route_1
 api.add_resource(NewProducts, '/new_products')  # Route_2
 api.add_resource(FeauturedProducts, '/featured_products')  # Route_3
 api.add_resource(Categories, '/categories')  # Route_4
+api.add_resource(Juice, '/juice_products')  # Route_5
 
 if __name__ == '__main__':
     app.run(port='5000')

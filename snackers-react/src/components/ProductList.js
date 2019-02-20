@@ -13,6 +13,8 @@ class ProductList extends Component {
   }
 
   async componentDidMount() {
+    // let category = this.props.match.id
+    // let response = await fetch(`/${category}_products`);
     let response = await fetch(`/${this.props.product_list.toLowerCase()}_products`);
     if (!response.ok) {
       return

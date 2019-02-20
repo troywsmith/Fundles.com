@@ -27,7 +27,7 @@ class Header extends Component {
                         <p className="fa fa-shopping-cart">Account</p>
                     </Link>
                     <Link to="/cart">
-                        <button className="snipcart-checkout snipcart-summary">
+                        <button className="cart">
                             <i className="fa fa-shopping-cart">$ {this.props.cartTotal.toFixed(2)} <span className="snipcart-total-items" role='img' aria-label="cart">🛒</span></i>
                         </button>
                     </Link>

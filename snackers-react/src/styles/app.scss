@@ -6,10 +6,13 @@
 @import './helpers/mixins.scss';
 
 // Components Style
+@import './components/PageHome';
+@import './components/PageProducts';
+@import './components/PageAccount';
+
+// Other Components Style
 @import './components/Header';
 @import './components/CategoryNav';
-@import './components/Home';
-@import './components/Account';
 @import './components/BuyButton';
 @import './components/ProductList';
 @import './components/Product';
@@ -18,13 +21,14 @@
 * {
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 body, html {
     padding: 0;
     margin: 0;
 }
+
 
 // App styling
 .App {
@@ -36,14 +40,19 @@ body, html {
     background-color: $background;
 }
 
-    
+
+
+// Main 
 .App-content {
-    padding: 20px;
-    width: 100%;
+    display: flex;
     max-width: 1500px;
+    padding: 20px;
     flex: 1;
+
 }
 
+
+// Footer
 .App-footer {
     width: 100%;
 
@@ -65,7 +74,7 @@ body, html {
 
 }
 
-.snipcart-checkout {
+.cart {
     background-color: transparent;
     border: 1px solid $dark-grey;
     padding: 0.5rem;
