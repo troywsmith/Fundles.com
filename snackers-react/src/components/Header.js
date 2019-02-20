@@ -13,7 +13,7 @@ class Header extends Component {
 
                 <div className="left">
                     <Link to="/" className="branding">
-                        <img src="http://freevector.co/wp-content/uploads/2009/02/29303-box-of-food-package.png" />
+                        <img src="http://freevector.co/wp-content/uploads/2009/02/29303-box-of-food-package.png" alt='logo'/>
                         <h1>Fundles.com</h1>
                     </Link>
                 </div>
@@ -28,7 +28,7 @@ class Header extends Component {
                     </Link>
                     <Link to="/cart">
                         <button className="snipcart-checkout snipcart-summary">
-                            <i className="fa fa-shopping-cart">$ {this.props.cartTotal.toFixed(2)} <span className="snipcart-total-items" >🛒</span></i>
+                            <i className="fa fa-shopping-cart">$ {this.props.cartTotal.toFixed(2)} <span className="snipcart-total-items" role='img' aria-label="cart">🛒</span></i>
                         </button>
                     </Link>
                 </div>

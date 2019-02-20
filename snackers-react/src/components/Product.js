@@ -36,7 +36,7 @@ class Product extends Component {
         <div className="product">
           <div className="product__information">
             <h2 className="Product-title">{this.state.product.desc_1}</h2>
-            <img src={this.state.image_path} />
+            <img src={this.state.image_path} alt={this.state.product.desc_1}/>
             <BuyButton {...this.state} />
           </div>
           <div className="product__description">
