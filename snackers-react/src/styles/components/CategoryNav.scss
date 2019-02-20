@@ -1,0 +1,19 @@
+.CategoryNav-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    // border-top: 1px solid black;
+}
+
+.CategoryNav-category {
+    // @include drop-shadow($dark-grey, 0.95);
+    text-align: center;
+    text-transform: capitalize;
+    // margin: 5px;
+    flex: 1;
+    background: white;
+    padding: 0px;
+    // border: 2px solid black;
+    // border-radius: 2px;
+}

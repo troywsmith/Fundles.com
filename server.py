@@ -24,7 +24,7 @@ class NewProducts(Resource):
         conn = db_connect.connect()  # connect to database
         # This line performs query and returns json result
         query = conn.execute(
-            "SELECT * FROM products WHERE online='YES' AND new='YES' ")
+            "SELECT * FROM products_online WHERE online='YES' AND new='YES' ")
         result = {'products': [dict(zip(tuple(query.keys()), i))
                                for i in query.cursor]}
         return jsonify(result)
@@ -35,7 +35,7 @@ class FeauturedProducts(Resource):
         conn = db_connect.connect()  # connect to database
         # This line performs query and returns json result
         query = conn.execute(
-            "SELECT * FROM products WHERE online='YES' AND featured='YES' ")
+            "SELECT * FROM products_online WHERE online='YES' AND featured='YES' ")
         result = {'products': [dict(zip(tuple(query.keys()), i))
                                for i in query.cursor]}
         return jsonify(result)
@@ -45,7 +45,7 @@ class Categories(Resource):
     def get(self):
         conn = db_connect.connect()  # connect to database
         # This line performs query and returns json result
-        query = conn.execute("SELECT DISTINCT category FROM products WHERE online='YES' ")
+        query = conn.execute("SELECT DISTINCT category, subcategory FROM products_online WHERE online='YES' ")
         result = {'categories': [dict(zip(tuple(query.keys()), i))
                                for i in query.cursor]}
         return jsonify(result)

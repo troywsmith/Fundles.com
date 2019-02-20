@@ -1,0 +1,63 @@
+ .App-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    font-size: 20px;
+    color: $dark-grey;
+    @include drop-shadow($dark-grey, 0.95);
+
+    a {
+        color: inherit;
+        text-decoration: none; 
+    }
+
+    .left {
+        width: 33%;
+
+        .branding {
+            display: flex;
+            flex-flow: wrap;
+            text-align: center;
+
+            img {
+                width: 30px;
+                height: 30px;
+                margin: 5px;
+            }
+        }
+
+    }
+
+    .middle {
+        width: 33%;
+        margin-left: auto;
+
+        .search-products {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid $dark-grey;
+            padding: 0.5rem;
+            border-radius: 4px;
+            color: $dark-grey;
+        
+            transition: background-color 0.5s, color 0.5s;
+            &:hover {
+                background-color: $dark-grey;
+                color: white;
+            }
+        }
+
+    }
+
+    .right {
+        width: 33%;
+        display: flex;
+        justify-content: flex-end;
+        
+        p {
+            margin: 10px;
+        }
+    }
+}

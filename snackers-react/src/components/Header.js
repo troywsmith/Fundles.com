@@ -12,7 +12,10 @@ class Header extends React.Component {
             <header className="App-header">
 
                 <div className="left">
-                    <Link to="/"><h1>🦐 Snackers</h1></Link>
+                    <Link to="/" className="branding">
+                        <img src="http://freevector.co/wp-content/uploads/2009/02/29303-box-of-food-package.png" />
+                        <h1>Fundles.com</h1>
+                    </Link>
                 </div>
 
                 <div className="middle">
@@ -27,12 +30,11 @@ class Header extends React.Component {
                     <Link to="/account">
                         <p className="fa fa-shopping-cart">Account</p>
                     </Link>
-                    <Link to="/checkout">
+                    <Link to="/cart">
                         <button className="snipcart-checkout snipcart-summary">
-                            <i className="fa fa-shopping-cart">Checkout</i> <span className="snipcart-total-items"></span>
+                            <i className="fa fa-shopping-cart">$ {this.props.cartTotal.toFixed(2)} <span className="snipcart-total-items" >🛒</span></i>
                         </button>
                     </Link>
-
                 </div>
 
             </header>

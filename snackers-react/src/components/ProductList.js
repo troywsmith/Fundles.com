@@ -36,9 +36,10 @@ class ProductList extends Component {
               return (
                 <div className="ProductList-product" key={product.a_prod_no}>
                   <Link to={`/product/${product.a_prod_no}`}>
-                    <h3>{product.desc_1}</h3>
+                    <h3>{product.desc_1.toLowerCase()}</h3>
                     <img src={image_path} alt={product.desc_1} />
                   </Link>
+                  <p>${parseFloat(product.curr_cost + '00000').toFixed(2)}</p>
                   <BuyButton product={product} />
                 </div>
               );
@@ -48,7 +49,7 @@ class ProductList extends Component {
       );
     }
 
-    return (<h2 className="ProductList-title">Waiting for API...</h2>);
+    return (<h2 className="ProductList-title">Loading...</h2>);
   }
 }
 
