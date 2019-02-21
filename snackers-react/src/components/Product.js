@@ -35,14 +35,29 @@ class Product extends Component {
     if (!this.state.loading) {
       return (
         <div className="product">
-          <div className="product__information">
-            <h2 className="Product-title">{this.state.product.desc_1}</h2>
-            <img src={this.state.image_path} alt={this.state.product.desc_1} />
+
+          <div className="product-top">
+
+            <div className="product_img">
+              <img src={this.state.image_path} alt={this.state.product.name} />
+            </div>
+
+          </div>
+
+          <div className="product-bottom">
+            <p className="product-brand">{this.state.product.brand}</p>
+            <p className="product-name">{this.state.product.name}</p>
+            <p className="product-size-count">{this.state.product.size} | {this.state.product.count} </p>
+            <input
+              type="number"
+              className="quantity-input"
+            >
+            </input>
             <BuyButton {...this.state} />
+            <h3> About the Product </h3>
+            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
           </div>
-          <div className="product__description">
-            {this.state.product.desc_1}
-          </div>
+
         </div>
       );
     }
