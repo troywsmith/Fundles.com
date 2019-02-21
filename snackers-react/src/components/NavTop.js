@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 // Components
 
 
-class Header extends Component {
+class NavTop extends Component {
 
     render() {
         return (
-            <div className="App-header">
+            <div className="App-navtop">
                 <div className="CategoryNav-container">
                     <div className="CategoryNav-category">
                         <Link to={`/products/category/all`}>
@@ -42,4 +42,4 @@ class Header extends Component {
     }
 }
 
-export default Header
+export default NavTop

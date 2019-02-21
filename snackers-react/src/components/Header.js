@@ -13,7 +13,8 @@ class Header extends Component {
 
                 <div className="left">
                     <Link to="/" className="branding">
-                        <img src="http://freevector.co/wp-content/uploads/2009/02/29303-box-of-food-package.png" alt='logo'/>
+                        {/* <img src="http://freevector.co/wp-content/uploads/2009/02/29303-box-of-food-package.png" alt='logo'/> */}
+                        <img src="https://cdn1.iconfinder.com/data/icons/food-cartoon/512/g8078-512.png" alt='logo'/>
                         <h1>Fundles.com</h1>
                     </Link>
                 </div>

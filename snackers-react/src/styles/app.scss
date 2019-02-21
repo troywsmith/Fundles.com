@@ -45,7 +45,6 @@ body, html {
 // Main 
 .App-content {
     display: flex;
-    max-width: 1500px;
     padding: 20px;
     flex: 1;
 
@@ -72,18 +71,4 @@ body, html {
         a {margin-left: 12px;}
     }
 
-}
-
-.cart {
-    background-color: transparent;
-    border: 1px solid $dark-grey;
-    padding: 0.5rem;
-    border-radius: 4px;
-    color: $dark-grey;
-
-    transition: background-color 0.5s, color 0.5s;
-    &:hover {
-        background-color: $dark-grey;
-        color: white;
-    }
 }

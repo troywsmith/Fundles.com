@@ -40,11 +40,11 @@ class App extends Component {
 
         <main className="App-content">
           <Switch>
-            <Route path="/" exact component={PageHome} />
+            <Route exact path="/" component={PageHome} />
             <Route path="/products" component={PageProducts} />
             <Route path="/account" component={PageAccount} />
-
             <Route path="/product/:id" component={Product} />
+            <Route component={PageHome}/>
           </Switch>
         </main>
 

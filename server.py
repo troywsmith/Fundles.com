@@ -13,7 +13,7 @@ class AllProducts(Resource):
     def get(self):
         conn = db_connect.connect()  # connect to database
         # This line performs query and returns json result
-        query = conn.execute("SELECT * FROM products WHERE online='YES' ")
+        query = conn.execute("SELECT * FROM products_online WHERE online='YES' ")
         result = {'products': [dict(zip(tuple(query.keys()), i))
                                for i in query.cursor]}
         return jsonify(result)

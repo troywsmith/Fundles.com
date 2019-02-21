@@ -17,11 +17,8 @@ class Home extends Component {
           <p><span role='img' aria-label="boom">💥</span>Free shipping on orders over $50 | No membership fees | 1-3 day shipping<span role='img' aria-label="boom">💥</span></p>
         </div>
 
-        <ProductList product_list={'Featured'} />
-
-        <ProductList product_list={'New'} />
-
-        {/* <ProductList product_list={'All'} /> */}
+        <ProductList product_list={'featured'} />
+        <ProductList product_list={'new'} />
 
       </div>
     );

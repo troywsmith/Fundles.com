@@ -62,12 +62,12 @@ class PageProducts extends Component {
 
                 <div className="content">
 
-                    <div className="welcome">
+                    {/* <div className="welcome">
                         <p>Products</p>
-                    </div>
+                    </div> */}
 
                     <Switch>
-                        <Route path="/products/category/:id" component={Category} />
+                        <Route exact path="/products/category/:category" component={Category} />
                     </Switch>
 
                 </div>
